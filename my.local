@@ -1,0 +1,8 @@
+#!/bin/sh
+# /etc/my.local
+if test -d /etc/my.local.d; then
+    for myscript in /etc/my.local.d/*.sh; do
+        test -r "${myscript}" && sh ${myscript}
+    done
+    unset myscript
+fi
